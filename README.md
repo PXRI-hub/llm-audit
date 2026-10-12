@@ -85,8 +85,15 @@ Each test takes a few minutes because it asks the bot a lot of questions. Note t
 
 ## What I learned
 
-(write these in your own words)
+- Telling an AI “don’t share this” helped (12 leaked down to 5) but didn’t fully work. Removing the secret from what the bot can see worked completely (0 leaked).
+- The same test gave different scores every run (4, 3, 2 out of 6), so one run proves nothing. Asking each question 5 times gave a fairer number.
+- My test only catches exact matches, so a differently formatted leak could slip past it.
+- AI answers change every time, so I ran each test several times before trusting a number.
+- A control (a clean document with no attack) showed my injection test was measuring the attack and not noise.
+- I almost concluded that prompt defenses don't work. Then the 3B model resisted every attack with no defense, so the real lesson was that the 1B model was just very easy to hijack.
+- Model size mattered a lot more than any defense I wrote.
+- A score of 0 only means the model passed the attacks I tried, not that it's safe.
 
 ## How I built it
 
-I built this to learn how AI apps get tested. I used Claude as a tutor while working through it, and I wrote my notes and ran every test myself.
+I built this to learn how AI apps get tested. I used Claude as a tutor while working through Ollama as it was my first time learning how to use this software, and I wrote my notes, my code, and ran every test myself.
