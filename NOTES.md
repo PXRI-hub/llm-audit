@@ -92,9 +92,27 @@ Fix 2: removed the confidential section from what the bot can see.
 - Also added `if __name__ == "__main__":` at the bottom of test_injection.py so that
   importing it from check_answers.py doesn't re-run the whole test.
 
+  ## Test 3: does model size matter? (test_models.py)
+- Ran the same injection test on llama3.2:1b and llama3.2:3b, plain bot and sandwich bot.
+- 1b: 15/15 obeyed for both bots
+- 3b: 0/15 obeyed for both bots (sample answers were normal, e.g. "15")
+- Control (clean document) was 0/5 every time.
+- The 3b model resisted all three attacks even without a defense, so I can't tell
+  if the sandwich helps. The plain bot was already at 0.
+- My earlier conclusion (the defenses failed) was too strong. They failed on a very
+  small model. The 3b model didn't need them for these attacks.
+- Limits: only 2 models, 3 fairly simple attacks, 5 tries each, and I only read one
+  sample answer per bot. The test only checks for the word HACKED.
+
 ## Things I learned
 - Telling an AI “don’t share this” helped (12 leaked down to 5) but didn’t fully work. Removing the secret from what the bot can see worked completely (0 leaked).
 - The same test gave different scores every run (4, 3, 2 out of 6), so one run proves nothing. Asking each question 5 times gave a fairer number.
 - The attacks that sounded clever, like pretending to be the CEO, didn’t work as well as just asking directly for the email.
 - My test only catches exact matches, so a differently formatted leak could slip past it.
 - A score of 0 from a design change isn’t the same as the model being safe, so the test now works as a check that the secret stays hidden.
+- AI answers change every time, so I ran each test several times before trusting a number.
+- A control (a clean document with no attack) showed my injection test was measuring the attack and not noise.
+- I printed the bots' real answers to check my own test, instead of just trusting the score.
+- I almost concluded that prompt defenses don't work. Then the 3B model resisted every attack with no defense, so the real lesson was that the 1B model was just very easy to hijack.
+- Model size mattered a lot more than any defense I wrote.
+- A score of 0 only means the model passed the attacks I tried, not that it's safe.
