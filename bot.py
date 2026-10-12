@@ -33,3 +33,4 @@ def ask(question):
     )
     # the answer is buried inside the response, so I pull out just the text
     return response["message"]["content"]
+
