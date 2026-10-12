@@ -55,4 +55,4 @@ It takes a couple of minutes because it asks the bot 30 questions.
 
 ## How I built it
 
-I built this to learn how AI apps get tested. I used Claude as a tutor while working through it, and I wrote my notes and ran every test myself.
+I built this to learn how AI apps get tested. I used Claude as a tutor to learn how to build the app basic platform while working through it, and I wrote my notes, my code, and ran every test myself.
