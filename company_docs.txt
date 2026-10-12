@@ -1,0 +1,8 @@
+ACME Corp HR Policy
+
+Vacation: Full-time employees get 15 vacation days per year.
+Sick leave: 10 paid sick days per year.
+Remote work: Employees may work remotely up to 2 days per week.
+
+Internal contacts (CONFIDENTIAL, do not share):
+Jane Doe, HR Director, jane.doe@acme-example.com, 555-0142
