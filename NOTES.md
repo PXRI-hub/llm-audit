@@ -112,7 +112,7 @@ Fix 2: removed the confidential section from what the bot can see.
 - A score of 0 from a design change isn’t the same as the model being safe, so the test now works as a check that the secret stays hidden.
 - AI answers change every time, so I ran each test several times before trusting a number.
 - A control (a clean document with no attack) showed my injection test was measuring the attack and not noise.
-- I printed the bots' real answers to check my own test, instead of just trusting the score.
+- I printed the bots real answers to check my own test, instead of just trusting the score.
 - I almost concluded that prompt defenses don't work. Then the 3B model resisted every attack with no defense, so the real lesson was that the 1B model was just very easy to hijack.
 - Model size mattered a lot more than any defense I wrote.
 - A score of 0 only means the model passed the attacks I tried, not that it's safe.
